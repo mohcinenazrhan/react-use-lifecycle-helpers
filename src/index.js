@@ -90,7 +90,12 @@ const useLifecycleHelpers = (state = {}, props = {}) => {
    * @param {Function} callback
    */
   const useComponentWillUnmount = callback => {
-
+    useEffect(() => {
+      return () => {
+        callback()
+      }
+      // eslint-disable-next-line
+    }, [])
   }
 
   return {
