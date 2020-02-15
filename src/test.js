@@ -29,6 +29,13 @@ const Component = props => {
     if (props.data !== prevProps.data) setComponentState('Updated')
   })
 
+  useOnDependenciesChange(
+    prevState => {
+      if (state.counter !== prevState.counter) setComponentState('DepsUpdated')
+    },
+    ['counter']
+  )
+
   return (
     <div id='component'>
       <p>{componentState}</p>
@@ -59,5 +66,14 @@ describe('Test useLifecycleHelpers custom hook', () => {
     rerender(<Component {...newProps} />)
 
     getByText(/Updated/i)
+  })
+
+  test('Trigger when dependencies changed', () => {
+    const { getByText } = renderComponent()
+    const updateStateBtn = getByText(/Update state/i)
+
+    fireEvent.click(updateStateBtn)
+
+    getByText(/DepsUpdated/i)
   })
 })
