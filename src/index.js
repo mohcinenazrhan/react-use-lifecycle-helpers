@@ -16,7 +16,10 @@ const useLifecycleHelpers = (state = {}, props = {}) => {
    * @param {Function} callback
    */
   const useComponentDidMount = (callback) => {
-
+    useEffect(() => {
+      callback()
+      // eslint-disable-next-line
+    }, [])
   }
 
   /**
