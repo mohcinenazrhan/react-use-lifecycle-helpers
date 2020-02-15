@@ -63,7 +63,21 @@ const useLifecycleHelpers = (state = {}, props = {}) => {
     callback,
     dependencies
   ) => {
+    const isFirstRender = useRef(true)
+    const refsDependencies = dependencies.map(dep => state[dep])
 
+    useEffect(() => {
+      if (isFirstRender.current) {
+        isFirstRender.current = false
+      } else {
+        const prevDependenciesState = dependencies.map(dep => ({
+          [dep]: prevState[dep]
+        }))
+        callback(Object.assign({}, ...prevDependenciesState))
+        setPrevState(state)
+      }
+      // eslint-disable-next-line
+    }, refsDependencies)
   }
 
   /**
