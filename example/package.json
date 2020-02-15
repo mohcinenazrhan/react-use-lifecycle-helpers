@@ -1,0 +1,20 @@
+{
+  "name": "react-use-lifecycle-methods-example",
+  "homepage": "https://Mohcine NAZRHAN.github.io/react-use-lifecycle-methods",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "prop-types": "^15.6.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-scripts": "^1.1.4",
+    "react-use-lifecycle-methods": "file:.."
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
