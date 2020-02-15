@@ -33,7 +33,18 @@ const useLifecycleHelpers = (state = {}, props = {}) => {
   const useComponentDidUpdate = (
     callback
   ) => {
+    const isFirstRender = useRef(true)
 
+    useEffect(() => {
+      if (isFirstRender.current) {
+        isFirstRender.current = false
+      } else {
+        callback(prevState, prevProps)
+        setPrevState(state)
+        setPrevProps(props)
+      }
+      // eslint-disable-next-line
+    }, [state, props])
   }
 
   /**
