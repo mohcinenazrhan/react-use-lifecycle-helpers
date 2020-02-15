@@ -8,6 +8,10 @@ import {
 } from '@testing-library/react'
 import useLifecycleHelpers from './'
 
+const mockCleanupCallback = jest.fn()
+beforeEach(() => {
+  jest.clearAllMocks()
+})
 afterEach(cleanup)
 
 const Component = props => {
@@ -35,6 +39,10 @@ const Component = props => {
     },
     ['counter']
   )
+
+  useComponentWillUnmount(() => {
+    mockCleanupCallback()
+  })
 
   return (
     <div id='component'>
@@ -75,5 +83,16 @@ describe('Test useLifecycleHelpers custom hook', () => {
     fireEvent.click(updateStateBtn)
 
     getByText(/DepsUpdated/i)
+  })
+
+  test('The component should be unmounted', () => {
+    const dom = renderComponent()
+    const getById = queryByAttribute.bind(null, 'id')
+    const { unmount } = dom
+    unmount()
+
+    const component = getById(dom.container, 'component')
+    expect(component).toBe(null)
+    expect(mockCleanupCallback.mock.calls.length).toBe(1)
   })
 })
