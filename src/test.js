@@ -25,6 +25,10 @@ const Component = props => {
     setComponentState('Mounted')
   })
 
+  useComponentDidUpdate((prevState, prevProps) => {
+    if (props.data !== prevProps.data) setComponentState('Updated')
+  })
+
   return (
     <div id='component'>
       <p>{componentState}</p>
@@ -46,5 +50,14 @@ describe('Test useLifecycleHelpers custom hook', () => {
     const { getByText } = renderComponent()
 
     getByText(/Mounted/i)
+  })
+
+  test('The component should be updated', () => {
+    const { getByText, rerender } = renderComponent({ data: 'test1' })
+
+    const newProps = { data: 'test2' }
+    rerender(<Component {...newProps} />)
+
+    getByText(/Updated/i)
   })
 })
