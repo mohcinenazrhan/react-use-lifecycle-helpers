@@ -21,6 +21,10 @@ const Component = props => {
     useOnDependenciesChange
   } = useLifecycleHelpers(state, props)
 
+  useComponentDidMount(() => {
+    setComponentState('Mounted')
+  })
+
   return (
     <div id='component'>
       <p>{componentState}</p>
@@ -38,4 +42,9 @@ function renderComponent(props) {
 }
 
 describe('Test useLifecycleHelpers custom hook', () => {
+  test('The component should be mounted', () => {
+    const { getByText } = renderComponent()
+
+    getByText(/Mounted/i)
+  })
 })
