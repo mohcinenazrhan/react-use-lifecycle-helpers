@@ -1,6 +1,6 @@
 {
-  "name": "react-use-lifecycle-methods-example",
-  "homepage": "https://Mohcine NAZRHAN.github.io/react-use-lifecycle-methods",
+  "name": "react-use-lifecycle-helpers-example",
+  "homepage": "https://Mohcine NAZRHAN.github.io/react-use-lifecycle-helpers",
   "version": "0.0.0",
   "license": "MIT",
   "private": true,
@@ -9,7 +9,7 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts": "^1.1.4",
-    "react-use-lifecycle-methods": "file:.."
+    "react-use-lifecycle-helpers": "file:.."
   },
   "scripts": {
     "start": "react-scripts start",

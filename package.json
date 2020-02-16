@@ -1,10 +1,10 @@
 {
-  "name": "react-use-lifecycle-methods",
+  "name": "react-use-lifecycle-helpers",
   "version": "1.0.0",
   "description": "helpers function arround useEffect hook to make your life easier",
   "author": "Mohcine NAZRHAN",
   "license": "MIT",
-  "repository": "Mohcine NAZRHAN/react-use-lifecycle-methods",
+  "repository": "Mohcine NAZRHAN/react-use-lifecycle-helpers",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",

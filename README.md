@@ -1,13 +1,13 @@
-# react-use-lifecycle-methods
+# react-use-lifecycle-helpers
 
 > helpers function arround useEffect hook to make your life easier
 
-[![NPM](https://img.shields.io/npm/v/react-use-lifecycle-methods.svg)](https://www.npmjs.com/package/react-use-lifecycle-methods) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/react-use-lifecycle-helpers.svg)](https://www.npmjs.com/package/react-use-lifecycle-helpers) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
 ```bash
-npm install --save react-use-lifecycle-methods
+npm install --save react-use-lifecycle-helpers
 ```
 
 ## Usage
@@ -15,7 +15,7 @@ npm install --save react-use-lifecycle-methods
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from 'react-use-lifecycle-methods'
+import MyComponent from 'react-use-lifecycle-helpers'
 
 class Example extends Component {
   render () {
