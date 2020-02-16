@@ -1,10 +1,9 @@
 {
   "name": "react-use-lifecycle-helpers",
-  "version": "1.0.0",
-  "description": "helpers function arround useEffect hook to make your life easier",
+  "version": "1.0.1",
+  "description": "Helpers functions arround useEffect hook to make your life easier, providing the most use cases of useEffect hook, among them the lifecycle of class component.",
   "author": "Mohcine NAZRHAN",
   "license": "MIT",
-  "repository": "Mohcine NAZRHAN/react-use-lifecycle-helpers",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
@@ -12,6 +11,26 @@
     "node": ">=8",
     "npm": ">=5"
   },
+  "homepage": "https://github.com/mohcinenazrhan/react-use-lifecycle-helpers",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mohcinenazrhan/react-use-lifecycle-helpers.git"
+  },
+  "keywords": [
+    "hook",
+    "react",
+    "custom",
+    "lifecycle",
+    "component",
+    "class",
+    "methods",
+    "componentDidUpdate",
+    "componentDidMount",
+    "componentWillUnmount",
+    "useDidUpdate",
+    "useDidMount",
+    "useWillUnmount"
+  ],
   "scripts": {
     "test": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
