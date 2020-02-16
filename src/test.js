@@ -19,28 +19,28 @@ const Component = props => {
   const [state, setState] = useState({ counter: 0 })
 
   const {
-    useComponentDidMount,
-    useComponentDidUpdate,
-    useComponentWillUnmount,
-    useOnDependenciesChange
+    useDidMount,
+    useDidUpdate,
+    useWillUnmount,
+    useDepsDidChange
   } = useLifecycleHelpers(state, props)
 
-  useComponentDidMount(() => {
+  useDidMount(() => {
     setComponentState('Mounted')
   })
 
-  useComponentDidUpdate((prevState, prevProps) => {
+  useDidUpdate((prevState, prevProps) => {
     if (props.data !== prevProps.data) setComponentState('Updated')
   })
 
-  useOnDependenciesChange(
+  useDepsDidChange(
     prevState => {
       if (state.counter !== prevState.counter) setComponentState('DepsUpdated')
     },
     ['counter']
   )
 
-  useComponentWillUnmount(() => {
+  useWillUnmount(() => {
     mockCleanupCallback()
   })
 
