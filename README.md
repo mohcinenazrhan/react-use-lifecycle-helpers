@@ -10,7 +10,7 @@
 npm install --save react-use-lifecycle-helpers
 ```
 
-[See Example](https://codesandbox.io/s/test-useeffect-helpers-mzz2m)
+[See Example](https://codesandbox.io/s/react-use-lifecycle-helpers-example-9eqc7)
 
 ## Usage
 
